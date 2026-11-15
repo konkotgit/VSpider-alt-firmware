@@ -51,7 +51,7 @@ Configuration changes are applied directly to the CPLD and remain active until t
 
 ## 📝 Changelog
 
-- **Rev. 1.3**
+- **Rev. 1.3**  
   Added Pentagon 128 machine mode.
   Fixed a Kempston conflict with the BetaDisk interface.
 
