@@ -11,6 +11,7 @@ Alternative firmware and ROM for the VSpider hardware.
 - ZX Spectrum +3 with +3e support
 - ZX Spectrum 48K
 - Timex TC 2048
+- Pentagon 128
 
 **Configuration options:**
 - Machine mode selection
@@ -49,6 +50,10 @@ Configuration changes are applied directly to the CPLD and remain active until t
 ---
 
 ## 📝 Changelog
+
+- **Rev. 1.3**
+  Added Pentagon 128 machine mode.
+  Fixed a Kempston conflict with the BetaDisk interface.
 
 - **Rev. 1.2**  
   Added Timex TC 2048 as a separate machine mode.  
