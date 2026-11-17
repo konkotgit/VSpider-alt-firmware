@@ -1,17 +1,18 @@
+
 # 🕷️ VSpider – Alternative Firmware and ROM
 
-Alternative firmware and ROM for the VSpider hardware.
+Alternative firmware and ROM for VSpider hardware.
 
 ---
 
 ## ⚙️ Features
 
-**Four operating modes:**
+**Supported machine modes:**
 - ZX Spectrum 128K
 - ZX Spectrum +3 with +3e support
 - ZX Spectrum 48K
 - Timex TC 2048
-- Pentagon 128
+- Pentagon 128/512 (512K available when DivMMC is disabled)
 
 **Configuration options:**
 - Machine mode selection
@@ -42,7 +43,8 @@ Configuration changes are applied directly to the CPLD and remain active until t
 - If **CAPS SHIFT** is not pressed, the machine boots automatically using the current CPLD configuration.
 - The setup menu always starts with the default configuration values.
 - Selecting ZX Spectrum +3 automatically selects +3e MMC.
-- Selecting ZX Spectrum 128K or ZX Spectrum 48K automatically selects DivMMC.
+- In Pentagon mode, disabling DivMMC makes the full 512KB of RAM available.
+- Selecting ZX Spectrum 128K or ZX Spectrum 48K automatically enables DivMMC.
 - Configuration changes are not saved and remain active only until the device is powered off.
 - Timex-specific graphics modes (Hi-Res and Hi-Color) are available exclusively in Timex TC 2048 mode.
 - The BetaDisk interface is supported in all non-Timex machine modes.
@@ -51,29 +53,34 @@ Configuration changes are applied directly to the CPLD and remain active until t
 
 ## 📝 Changelog
 
-- **Rev. 1.3**  
-  Added Pentagon 128 machine mode.
-  Fixed a Kempston conflict with the BetaDisk interface.
+- **Rev. 1.4**
+  - Fixed Pentagon timings.
+  - In Pentagon mode, disabling DivMMC makes the full 512KB of RAM available.
+  - Fixed the BetaDisk interface. Again ;-)
+  - Partially implemented the floating bus.
 
-- **Rev. 1.2**  
-  Added Timex TC 2048 as a separate machine mode.  
-  Timex-specific graphics modes (Hi-Res and Hi-Color) are now available exclusively in Timex TC 2048 mode and have been disabled in all other machine modes.  
-  This change resolves a hardware conflict between Timex graphics modes and the BetaDisk interface, allowing BetaDisk to be used in all non-Timex machine modes.
+- **Rev. 1.3**
+  - Added Pentagon 128 machine mode.
+  - Fixed a Kempston conflict with the BetaDisk interface.
 
-- **Rev. 1.1**  
-  Initial public release.
+- **Rev. 1.2**
+  - Added Timex TC 2048 as a separate machine mode.
+  - Timex-specific graphics modes (Hi-Res and Hi-Color) are now available exclusively in Timex TC 2048 mode and have been disabled in all other machine modes.
+  - This change resolves a hardware conflict between Timex graphics modes and the BetaDisk interface, allowing BetaDisk to be used in all non-Timex machine modes.
+
+- **Rev. 1.1**
+  - Initial public release.
 
 ---
 
 ## 🔧 Hardware Configuration
 
-The rightmost switch of the 3-position DIP switch forces ZX Spectrum 48K mode and disables the setup menu. This ensures compatibility with external interfaces, particularly disk interfaces.
+The rightmost switch on the 3-position DIP switch forces ZX Spectrum 48K mode and disables the setup menu. This ensures compatibility with external interfaces, particularly disk interfaces.
 
 ---
 
 ## ⚠️ Known Issues
 
-- Floating bus logic has not yet been implemented in the CPLD.
 - If the SD card is not detected in +3e mode, press **RESET**.
 
 ---
