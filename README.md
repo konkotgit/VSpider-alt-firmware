@@ -1,4 +1,3 @@
-
 # 🕷️ VSpider – Alternative Firmware and ROM
 
 Alternative firmware and ROM for VSpider hardware.
@@ -12,12 +11,13 @@ Alternative firmware and ROM for VSpider hardware.
 - ZX Spectrum +3 with +3e support
 - ZX Spectrum 48K
 - Timex TC 2048
-- Pentagon 128/512 (512K available when DivMMC is disabled)
+- Pentagon 128 (DivMMC or Z-Controller when DivMMC is disabled)
+- Pentagon 512 with Gluk Reset Service and Z-Controller (requires a connected BetaDisk interface)
 
 **Configuration options:**
 - Machine mode selection
-- DivMMC On/Off (ZX128 / ZX48 / Timex modes)
-- DivMMC / +3e MMC selection (ZX +3 mode)
+- DivMMC On/Off (ZX Spectrum 128K / ZX Spectrum 48K / Timex modes)
+- DivMMC / +3e MMC selection (ZX Spectrum +3 mode)
 - TurboSound On/Off
 - Kempston joystick interface On/Off
 
@@ -43,9 +43,9 @@ Configuration changes are applied directly to the CPLD and remain active until t
 - If **CAPS SHIFT** is not pressed, the machine boots automatically using the current CPLD configuration.
 - The setup menu always starts with the default configuration values.
 - Selecting ZX Spectrum +3 automatically selects +3e MMC.
-- In Pentagon mode, disabling DivMMC makes the full 512KB of RAM available.
+- In Pentagon mode, disabling DivMMC makes the full 512 KB of RAM available.
 - Selecting ZX Spectrum 128K or ZX Spectrum 48K automatically enables DivMMC.
-- Configuration changes are not saved and remain active only until the device is powered off.
+- Configuration changes are not saved permanently and remain active only until the device is powered off.
 - Timex-specific graphics modes (Hi-Res and Hi-Color) are available exclusively in Timex TC 2048 mode.
 - The BetaDisk interface is supported in all non-Timex machine modes.
 
@@ -53,10 +53,16 @@ Configuration changes are applied directly to the CPLD and remain active until t
 
 ## 📝 Changelog
 
+- **Rev. 1.5**
+  - Added Gluk Reset Service (requires a connected BetaDisk interface).
+  - Fixed several issues in Pentagon mode.
+  - Z-Controller support has been restored.
+  - Added the Pentagon 512 mode with Gluk Reset Service.
+
 - **Rev. 1.4**
   - Fixed Pentagon timings.
-  - In Pentagon mode, disabling DivMMC makes the full 512KB of RAM available.
-  - Fixed the BetaDisk interface. Again ;-)
+  - In Pentagon mode, disabling DivMMC makes the full 512 KB of RAM available.
+  - Fixed the BetaDisk interface. Again! ;-)
   - Partially implemented the floating bus.
 
 - **Rev. 1.3**
